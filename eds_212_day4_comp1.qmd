@@ -1,0 +1,15 @@
+---
+title: "Day 4 Comp Session 4"
+format: html
+editor: visual
+---
+
+## Creating Vectors
+
+```{r}
+rain <- c(3, 5, 10.1, 6)
+## Check the class in the console using the class() function
+
+## Let's scale this vector:
+rain_scaled <- 5 * rain 
+```
