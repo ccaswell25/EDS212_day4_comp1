@@ -4,6 +4,10 @@ format: html
 editor: visual
 ---
 
+General Notes:
+
+\>\>Git add "name of file" will allow you to update just one file in the list instead of "Git add ." which is going to push updates for all files
+
 ## Creating Vectors
 
 ```{r}
