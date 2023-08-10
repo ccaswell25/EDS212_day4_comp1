@@ -47,3 +47,35 @@ my_matrix + matrixA
 ```
 
 ## Matrix Multiplication
+
+```{r}
+## Let's create 2 matrices with data created as we create the matrix (instead of before creating the matrix)
+cats <- matrix(data = c(0, 4, 5, 9), nrow = 2, ncol = 2, byrow = TRUE)
+dogs <- matrix(data = c(6,-2, 5, 9), nrow = 2, ncol = 2, byrow = TRUE)
+##To multiply, we use the rdot function which is "%*%"
+dogs %*% cats
+```
+
+## Leslie Matrix Example
+
+```{r}
+## Let's re-create our example from notes. We are populating the values from original formulas for eggs, larvae, and female adults. We need to first create a matrix of these values from the formulas.
+insect_leslie <- matrix(data = c(0,0,600,.2,0,0,0,.08,0), 
+                        nrow = 3, 
+                        ncol = 3, 
+                        byrow = TRUE)
+insect_leslie
+
+## We're now going to create an initial condition. We are saying there are initially 12,000 eggs, 700 larvaue, and 500 adult females
+insect_y0 <- c(12000, 700, 500)
+
+## Find the population structure for each life stage at t = 1 year. Now we can see that with the initial conditions, in year 1 we expect 300000 eggs, 2400 larvae, and 56 females
+insect_y1 <- insect_leslie %*% insect_y0
+insect_y1
+```
+
+```{r}
+## Find the population structure at t = 2 years. We use the values from y1 (insect_y1) to find the next year. 
+insect_y2 <- insect_leslie %*% insect_y1
+insect_y2
+```
