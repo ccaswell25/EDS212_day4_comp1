@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-General Notes:
+### General Notes:
 
 \>\>Git add "name of file" will allow you to update just one file in the list instead of "Git add ." which is going to push updates for all files
 
@@ -17,3 +17,33 @@ rain <- c(3, 5, 10.1, 6)
 ## Let's scale this vector:
 rain_scaled <- 5 * rain 
 ```
+
+## Matrices!
+
+```{r}
+## Let's first create a sequence
+my_values <- seq(from = 1 , to = 10)
+
+## Let's make this into a matrix. We use the function matrix(). We input the data, how many rows, and how many columns we want in the matrix. Byrow tells us if we want the data to fill in by rows or columns. The default is by columns
+my_matrix <- matrix(data = my_values, nrow = 2, ncol = 5, byrow = TRUE)
+```
+
+```{r}
+## Let's test whether we can create a matrix with data lengths that don't match the dimensions of the matrix we are trying to create
+my_matrix_2 <- matrix(data = my_values, nrow = 3, ncol = 4, byrow = TRUE)
+my_matrix_2
+## What we found is it works with a warning. The data will start repeating...
+```
+
+```{r}
+## Let's make a matrix with a sequence directly in the matrix instead of creating the sequence first
+matrixA <- matrix(data = seq(from = 2, to = 5, length = 10), 
+                  nrow = 2 ,
+                  ncol = 5, 
+                  byrow = TRUE)
+
+## Let's add the matrices
+my_matrix + matrixA
+```
+
+## Matrix Multiplication
